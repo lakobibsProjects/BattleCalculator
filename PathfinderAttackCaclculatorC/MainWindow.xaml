@@ -1,0 +1,323 @@
+﻿<Window x:Class="PathfinderAttackCaclculatorC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PathfinderAttackCaclculatorC"
+        xmlns:wpfTool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        mc:Ignorable="d"
+        Title="Pathfinder Battle Calculator" Height="400" Width="600">
+    <Window.Resources>
+        <Style TargetType="CheckBox">
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+        <Style x:Key="ResultTB" TargetType="TextBox">
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Text" Value="+0"/>
+        </Style>
+        <Style x:Key="defaultRB" TargetType="RadioButton">
+            <Setter Property="Margin" Value="1"/>
+        </Style>
+        <Style x:Key="conditionsRB" BasedOn="{StaticResource defaultRB}" TargetType="RadioButton"></Style>
+        <Style x:Key="modificatorsRB" BasedOn="{StaticResource defaultRB}" TargetType="RadioButton"></Style>
+    </Window.Resources>
+    
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="Modificators" Grid.Row="1"  Margin="5">
+            <TabControl Margin="3">
+                <TabItem Header="Mellee" Margin="3">
+                    <ScrollViewer HorizontalScrollBarVisibility="Visible"  VerticalScrollBarVisibility="Visible" CanContentScroll="True">
+                        <StackPanel>                            
+                            <RadioButton x:Name="rbPowerAttack" GroupName="crushingSmash" Content="Power Attack" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbPiranhiaStrike" GroupName="crushingSmash" Content="Piranhia Strike" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbFuriousFocus" Content="Furious Focus" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbWeaponFinesse" Content="Weapon Finesse" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbSlashingGrace" Content="SlashingGrace" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbDefensivFight" Content="Defensive Fighting" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbCombatExpertise" Content="Combat Expertise" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbRage" GroupName="Rage" Content="Rage" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbGraterRage"  GroupName="Grater Rage" Content="Rage" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbMightyRage" GroupName="MightyRage"  Content="Rage" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbMwkWeapon" GroupName="EnchantmentBonus" Content="MWK weapon" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbEnchantment" GroupName="EnchantmentBonus" Content="Enchantment bonus" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbFlank" Content="Flank" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbSmite" Content="Smite" Style="{StaticResource modificatorsRB}"/>
+                        </StackPanel>                        
+                    </ScrollViewer>
+
+                    
+                </TabItem>
+                <TabItem Header="Natural Attack">
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                        <StackPanel ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                            <RadioButton x:Name="rbNaturalPowerAttack" GroupName="crushingSmash" Content="Power Attack" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbNaturalPiranhiaStrike" GroupName="crushingSmash" Content="Piranhia Strike" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbNaturalWeaponFinesse" Content="Weapon Finesse" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbNaturalSlashingGrace" Content="SlashingGrace" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbNaturalDefensivFight" Content="Defensive Fighting" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbNaturalCombatExpertise" Content="Combat Expertise" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbNaturalRage" GroupName="Rage" Content="Rage" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbNaturalGraterRage"  GroupName="Grater Rage" Content="Rage" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbNaturalMightyRage" GroupName="MightyRage"  Content="Rage" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbNaturalEnchantment" GroupName="EnchantmentBonus" Content="Enchantment bonus" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbNaturalFlank" Content="Flank" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbNaturalSmite" Content="Smite" Style="{StaticResource modificatorsRB}"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="Ranged">
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                        <StackPanel ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                            <RadioButton x:Name="rbStrToDmg" Content="Strength to damage" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbDexToDMG" Content="Dexterity to damage" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbIntToDmg" Content="Intelegence to damage" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbWisToDmg" Content="Wisdom to damage" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbChaToDmg" Content="Charisma to damage" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbPointBlankRange" Content="Target in point blank range" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbDeadlyAim" Content="Deadly aim" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbRapiShot" Content="Rapid shot" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbMwkRangedWeapon" GroupName="EnchantmentBonus" Content="MWK weapon" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbRengedEnchantment" GroupName="EnchantmentBonus" Content="Enchantment bonus" Style="{StaticResource modificatorsRB}"/>
+                            <RadioButton x:Name="rbRangedSmite" Content="Smite" Style="{StaticResource modificatorsRB}"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+                
+            </TabControl>
+
+        </StackPanel>
+
+        <StackPanel x:Name="Conditions" Grid.Row="3" Margin="10"  >
+            <!--d:DataContext="{d:DesignInstance Type=local:ConditionsCollection}"-->
+            <TabControl>
+                <TabControl Margin="3">
+                    <TabItem Header="Buffs">
+                        <StackPanel>
+                            <RadioButton x:Name="rbHeroism" GroupName="Morale" Content="Heroism" Style="{StaticResource conditionsRB}"/>
+                            <RadioButton x:Name="rbGreaterHeroism" GroupName="Morale" Content="Greater Heroism" Style="{StaticResource conditionsRB}"/>
+                            <RadioButton x:Name="rbHaste" GroupName="Haste" Content="Haste" Style="{StaticResource conditionsRB}"/>
+                            <RadioButton x:Name="rbBlessingOfFervoreAttackBonus" GroupName="Haste" Content="Blessing of Fervore: +2 to Attack" Style="{StaticResource conditionsRB}"/>
+                            <RadioButton x:Name="rbBlessingOfFervoreAdditionalAttack" GroupName="Haste" Content="Blessing of Fervore: Additional Attack" Style="{StaticResource conditionsRB}"/>
+                        </StackPanel>                        
+                        
+                    </TabItem>
+                    <TabItem Header="Debuffs">
+                        <StackPanel>
+                            <RadioButton x:Name="rbFatiq" GroupName="Fatiq" Content="Fatiq" Style="{StaticResource conditionsRB}"/>
+                            <RadioButton x:Name="rbExhausted" GroupName="Fatiq" Content="Exhausted" Style="{StaticResource conditionsRB}"/>
+                            <RadioButton x:Name="rbSikened" Content="Sikened" Style="{StaticResource conditionsRB}"/>
+                            <RadioButton x:Name="rbShaken" Content="Shaken" Style="{StaticResource conditionsRB}"/>
+                        </StackPanel>
+                    </TabItem>
+                </TabControl>
+            </TabControl>
+        </StackPanel>
+        
+        <WrapPanel x:Name="Stats" Grid.Column="1" HorizontalAlignment="Left" Height="252" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="276" >
+            <StackPanel Orientation="Horizontal" Margin="3">
+                <wpfTool:ButtonSpinner Spin="ButtonSpinner_Spin">
+                    <TextBox Text="0" HorizontalContentAlignment="Right" />
+                </wpfTool:ButtonSpinner>
+                <TextBox Focusable="False">
+                    STR
+                </TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="3">
+                <wpfTool:ButtonSpinner Spin="ButtonSpinner_Spin">
+                    <TextBox Text="0" HorizontalContentAlignment="Right" />
+                </wpfTool:ButtonSpinner>
+                <TextBox Focusable="False">
+                    DEX
+                </TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="3">
+                <wpfTool:ButtonSpinner Spin="ButtonSpinner_Spin">
+                    <TextBox Text="0" HorizontalContentAlignment="Right" />
+                </wpfTool:ButtonSpinner>
+                <TextBox Focusable="False">
+                    CON
+                </TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="3">
+                <wpfTool:ButtonSpinner Spin="ButtonSpinner_Spin">
+                    <TextBox Text="0" HorizontalContentAlignment="Right" />
+                </wpfTool:ButtonSpinner>
+                <TextBox Focusable="False">
+                    INT
+                </TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="3">
+                <wpfTool:ButtonSpinner Spin="ButtonSpinner_Spin">
+                    <TextBox Text="0" HorizontalContentAlignment="Right" />
+                </wpfTool:ButtonSpinner>
+                <TextBox Focusable="False">
+                    WIS
+                </TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="3">
+                <wpfTool:ButtonSpinner Spin="ButtonSpinner_Spin">
+                    <TextBox Text="0" HorizontalContentAlignment="Right" />
+                </wpfTool:ButtonSpinner>
+                <TextBox Focusable="False">
+                    CHA
+                </TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="3">
+                <wpfTool:ButtonSpinner Spin="ButtonSpinner_Spin">
+                    <TextBox Text="0" HorizontalContentAlignment="Right" />
+                </wpfTool:ButtonSpinner>
+                <TextBox Focusable="False">
+                    BAB
+                </TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="3">
+                <wpfTool:ButtonSpinner Spin="ButtonSpinner_Spin">
+                    <TextBox Text="0" HorizontalContentAlignment="Right" />
+                </wpfTool:ButtonSpinner>
+                <TextBox Focusable="False">
+                    Class lvl
+                </TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="3">
+                <wpfTool:ButtonSpinner Spin="ButtonSpinner_Spin">
+                    <TextBox Text="0" HorizontalContentAlignment="Right" />
+                </wpfTool:ButtonSpinner>
+                <TextBox Focusable="False">
+                    Another attack modifiers
+                </TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="3">
+                <wpfTool:ButtonSpinner Spin="ButtonSpinner_Spin">
+                    <TextBox Text="0" HorizontalContentAlignment="Right" />
+                </wpfTool:ButtonSpinner>
+                <TextBox Focusable="False">
+                    Another damage modifiers
+                </TextBox>
+            </StackPanel>
+        </WrapPanel>
+        <StackPanel x:Name="AttackResult" Grid.Row="2" Grid.Column="2"  Margin="10">
+            <TabControl >
+                <TabItem Header="Mellee">
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />                            
+                        </Grid.RowDefinitions>
+                        <TextBlock HorizontalAlignment="Center">
+                            Type of attack
+                        </TextBlock>
+                        <TextBlock Grid.Column="1" HorizontalAlignment="Center">
+                            Attack
+                        </TextBlock>
+                        <TextBlock Grid.Column="2" HorizontalAlignment="Center">
+                            Damage
+                        </TextBlock>
+                        <TextBlock Grid.Row="1" HorizontalAlignment="Center">
+                            Main Hand
+                        </TextBlock>
+                        <TextBlock Grid.Row="2" HorizontalAlignment="Center">
+                            Off Hand
+                        </TextBlock>
+                        <TextBlock Grid.Row="3" HorizontalAlignment="Center">
+                            Two-Handed
+                        </TextBlock>
+                        <TextBox Name="MainHandAttack" Grid.Row="1" Grid.Column="1" Style="{StaticResource ResultTB}">
+                            
+                        </TextBox>
+                        <TextBox Name="MainHandDmg" Grid.Row="1" Grid.Column="2" Style="{StaticResource ResultTB}">
+
+                        </TextBox>
+                        <TextBox Name="OffHandAttack" Grid.Row="2" Grid.Column="1" Style="{StaticResource ResultTB}">
+
+                        </TextBox>
+                        <TextBox Name="OffHandDmg" Grid.Row="2" Grid.Column="2" Style="{StaticResource ResultTB}">
+
+                        </TextBox>
+                        <TextBox Name="TwoHandedAttack" Grid.Row="3" Grid.Column="1" Style="{StaticResource ResultTB}">
+
+                        </TextBox>
+                        <TextBox Name="TwoHandedDmg" Grid.Row="3" Grid.Column="2" Style="{StaticResource ResultTB}">
+
+                        </TextBox>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Natural Attack">
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />                            
+                        </Grid.RowDefinitions>
+                        <TextBlock HorizontalAlignment="Center">
+                            Type of attack
+                        </TextBlock>
+                        <TextBlock Grid.Column="1" HorizontalAlignment="Center">
+                            Attack
+                        </TextBlock>
+                        <TextBlock Grid.Column="2" HorizontalAlignment="Center">
+                            Damage
+                        </TextBlock>
+                        <TextBlock Grid.Row="1" HorizontalAlignment="Center">
+                            Primary
+                        </TextBlock>
+                        <TextBlock Grid.Row="2" HorizontalAlignment="Center">
+                            Secondary
+                        </TextBlock>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Ranged">
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <TextBlock HorizontalAlignment="Center">
+                            Type of attack
+                        </TextBlock>
+                        <TextBlock Grid.Column="1" HorizontalAlignment="Center">
+                            Attack
+                        </TextBlock>
+                        <TextBlock Grid.Column="2" HorizontalAlignment="Center">
+                            Damage
+                        </TextBlock>
+                        <TextBlock Grid.Row="1" HorizontalAlignment="Center">
+                            Ranged
+                        </TextBlock>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+
+        </StackPanel>
+    </Grid>
+</Window>

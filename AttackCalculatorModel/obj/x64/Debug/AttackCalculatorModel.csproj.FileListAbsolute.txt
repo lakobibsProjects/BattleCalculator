@@ -1,0 +1,2 @@
+C:\Users\lakobib\source\repos\AttackCaclculator\AttackCalculatorModel\obj\x64\Debug\AttackCalculatorModel.csprojAssemblyReference.cache
+C:\Users\lakobib\source\repos\AttackCaclculator\AttackCalculatorModel\obj\x64\Debug\AttackCalculatorModel.csproj.CoreCompileInputs.cache

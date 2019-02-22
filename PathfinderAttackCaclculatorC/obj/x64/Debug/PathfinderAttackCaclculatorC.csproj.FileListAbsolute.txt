@@ -1,0 +1,6 @@
+C:\Users\lakobib\source\repos\AttackCaclculator\PathfinderAttackCaclculatorC\obj\x64\Debug\PathfinderAttackCaclculatorC.csprojAssemblyReference.cache
+C:\Users\lakobib\source\repos\AttackCaclculator\PathfinderAttackCaclculatorC\obj\x64\Debug\MainWindow.g.cs
+C:\Users\lakobib\source\repos\AttackCaclculator\PathfinderAttackCaclculatorC\obj\x64\Debug\App.g.cs
+C:\Users\lakobib\source\repos\AttackCaclculator\PathfinderAttackCaclculatorC\obj\x64\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\lakobib\source\repos\AttackCaclculator\PathfinderAttackCaclculatorC\obj\x64\Debug\PathfinderAttackCaclculatorC_MarkupCompile.cache
+C:\Users\lakobib\source\repos\AttackCaclculator\PathfinderAttackCaclculatorC\obj\x64\Debug\PathfinderAttackCaclculatorC_MarkupCompile.lref

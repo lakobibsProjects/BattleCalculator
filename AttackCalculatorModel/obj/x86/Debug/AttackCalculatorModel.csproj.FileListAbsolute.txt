@@ -1,0 +1,1 @@
+C:\Users\lakobib\source\repos\AttackCaclculator\AttackCalculatorModel\obj\x86\Debug\AttackCalculatorModel.csproj.CoreCompileInputs.cache

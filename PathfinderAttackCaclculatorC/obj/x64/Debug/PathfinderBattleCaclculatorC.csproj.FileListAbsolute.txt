@@ -1,0 +1,12 @@
+C:\Users\lakobib\source\repos\AttackCaclculator\PathfinderAttackCaclculatorC\obj\x64\Debug\PathfinderBattleCaclculatorC.csprojAssemblyReference.cache
+C:\Users\lakobib\source\repos\AttackCaclculator\PathfinderAttackCaclculatorC\obj\x64\Debug\MainWindow.g.cs
+C:\Users\lakobib\source\repos\AttackCaclculator\PathfinderAttackCaclculatorC\obj\x64\Debug\App.g.cs
+C:\Users\lakobib\source\repos\AttackCaclculator\PathfinderAttackCaclculatorC\obj\x64\Debug\PathfinderAttackCaclculatorC_MarkupCompile.cache
+C:\Users\lakobib\source\repos\AttackCaclculator\PathfinderAttackCaclculatorC\obj\x64\Debug\PathfinderAttackCaclculatorC_MarkupCompile.lref
+C:\Projects\C#\BattleCalculator\PathfinderAttackCaclculatorC\obj\x64\Debug\PathfinderBattleCaclculatorC.csprojAssemblyReference.cache
+C:\Projects\C#\BattleCalculator\PathfinderAttackCaclculatorC\obj\x64\Debug\MainWindow.g.cs
+C:\Projects\C#\BattleCalculator\PathfinderAttackCaclculatorC\obj\x64\Debug\App.g.cs
+C:\Projects\C#\BattleCalculator\PathfinderAttackCaclculatorC\obj\x64\Debug\PathfinderAttackCaclculatorC_MarkupCompile.cache
+C:\Projects\C#\BattleCalculator\PathfinderAttackCaclculatorC\obj\x64\Debug\PathfinderAttackCaclculatorC_MarkupCompile.lref
+C:\Projects\C#\BattleCalculator\PathfinderAttackCaclculatorC\obj\x64\Debug\PathfinderBattleCaclculatorC_MarkupCompile.cache
+C:\Projects\C#\BattleCalculator\PathfinderAttackCaclculatorC\obj\x64\Debug\PathfinderBattleCaclculatorC_MarkupCompile.lref
