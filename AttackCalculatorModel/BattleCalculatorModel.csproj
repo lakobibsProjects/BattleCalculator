@@ -86,11 +86,15 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdditionalVariables\AbstractiesAdditionalVariables\AbstractDependencyVariable.cs" />
+    <Compile Include="AdditionalVariables\InterfacesAdditionalVariables\IVariable.cs" />
+    <Compile Include="Conditions\AbstractiesConditionsBC\Buff.cs" />
+    <Compile Include="Conditions\InterfacesConditionsBC\ICondition.cs" />
     <Compile Include="Modifires\AbstractiesBC\AbstractModifire.cs" />
     <Compile Include="Modifires\InterfacesBC\IGroundOperation.cs" />
-    <Compile Include="IInputParametresCollector.cs" />
+    <Compile Include="ResultCalculations\InterfacesResultCalculation\IInputParametresCollector.cs" />
     <Compile Include="Modifires\InterfacesBC\IModifire.cs" />
-    <Compile Include="MainModel.cs" />
+    <Compile Include="ResultCalculations\MainModel.cs" />
     <Compile Include="Modifires\MeleeModifires\PowerAttackModifire.cs" />
     <Compile Include="Stats\InterfacesStatsBC\IStat.cs" />
     <Compile Include="Stats\StatBlock.cs" />
@@ -99,6 +103,9 @@
     <Compile Include="Stats\StatsBC\VariableStat.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ResultCalculations\MelleeResultCalculations\" />
+    <Folder Include="ResultCalculations\NaturalAttackResultCalculations\" />
+    <Folder Include="ResultCalculations\RangedResultCalculations\" />
     <Folder Include="Stats\AbstractiesStatsBC\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

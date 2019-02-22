@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace AttackCalculatorModel.Stats
 {
-    //описывает сокращенные, обобщенные имена для всех базовых переменных, необходимых для подсчета
+    /// <summary>
+    /// описывает сокращенные, обобщенные имена для всех базовых переменных, необходимых для подсчета
+    /// </summary>
     public enum StatNames
     {
         str,

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace AttackCalculatorModel.Stats
 {
-    //этот класс формирует диктионари, содержащий информацию о состоянии базовых переменных и дает доступ к ней для 
+    /// <summary>
+    /// этот класс формирует диктионари, содержащий информацию о состоянии базовых переменных и дает доступ к ней для 
+    /// </summary>
     public class StatBlock
     {
         #region Initialize variables
@@ -24,14 +26,18 @@ namespace AttackCalculatorModel.Stats
         private IStat variableDamageModifire = new VariableStat(StatNames.vdm.ToString());
         #endregion
 
-        //метод должен устанавливать значения в диктионари, которые передаются из ВМ
-        //!допилить!
+        /// <summary>
+        /// метод должен устанавливать значения в диктионари, которые передаются из ВМ
+        /// </summary>
+        //!запилить!
         private void setStatsValues()
         {
             throw new NotImplementedException();
         }
 
-        //метод добавляет экземпляры базовых значений в диктионари
+        /// <summary>
+        /// метод добавляет экземпляры базовых значений в диктионари
+        /// </summary>
         private void setStatBlock()
         {
             StatBlockList.Add(strength.Name, strength.Value);
@@ -46,6 +52,11 @@ namespace AttackCalculatorModel.Stats
             StatBlockList.Add(variableDamageModifire.Name, variableDamageModifire.Value);
         }
 
+        /// <summary>
+        /// Возвращает значение базового параметра
+        /// </summary>
+        /// <param name="name">Сокращенное имя базового параметра, соответствующего одному из значений StatNames</param>
+        /// <returns>Возвращает значение базового параметра</returns>
         //переделать для случаев, если передается некорректное имя.
         public int getStatValue(string name)
         {            
@@ -56,7 +67,11 @@ namespace AttackCalculatorModel.Stats
             return 0;
         }
 
-        //метод позволяет менять другим методам в рамках сборки значение базовой переменной
+        /// <summary>
+        /// Метод позволяет менять другим методам в рамках сборки значение базовой переменной
+        /// </summary>
+        /// <param name="name">Сокращенное имя базового параметра, соответствующего одному из значений StatNames</param>
+        /// <param name="newValue">Новое значение базового парметра</param>
         //?подумать над необходимостью?
         internal void changeStatValue(string name, int newValue)
         {

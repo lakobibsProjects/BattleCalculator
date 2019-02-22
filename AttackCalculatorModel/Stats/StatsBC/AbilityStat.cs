@@ -5,8 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AttackCalculatorModel.Stats
-{   
-    //класс описывает основные свойства детерминированных базовых переменных
+{
+    /// <summary>
+    /// класс описывает основные свойства детерминированных базовых переменных
+    /// </summary>
     class AbilityStat : IStat
     {
         #region Constants

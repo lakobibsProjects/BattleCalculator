@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace AttackCalculatorModel.Stats
 {
-    //класс описывает основные свойства недетерминированных базовых переменных
+    /// <summary>
+    /// класс описывает основные свойства недетерминированных базовых переменных
+    /// </summary>
     class VariableStat : IStat
     {
         #region Constants
